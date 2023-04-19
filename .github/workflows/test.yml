@@ -1,0 +1,34 @@
+name: Testing Github Actions
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-nodejs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install npm
+        run: npm install
+
+  check-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt # Promenite ovo prema vašim potrebama
