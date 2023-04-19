@@ -31,4 +31,4 @@ jobs:
           python-version: 3
 
       - name: Install Python dependencies
-        run: pip install -r requirements.txt # Promenite ovo prema vašim potrebama
+        run: pip install --upgrade pip
